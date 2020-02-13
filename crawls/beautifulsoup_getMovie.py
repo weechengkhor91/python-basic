@@ -19,19 +19,21 @@ for x in range(10):
     #find all
     items = content.find_all('ol',class_='grid_view')
     items = content.find_all('li')
-    all_titles = content.find_all('span',class_='title')
-    print(all_titles )
-    print(len(items))
+
+    #print(len(items))
 
     for item in items:
         #print(type(item))
- #or (item.find('em',class_='') != None) or (item.find('span',class_='rating_num') != None) or (item.find('a') != None)
-        if item.find('span', class_='title') != None or item.find('em',class_='') != None:
+        #or (item.find('em',class_='') != None) or (item.find('span',class_='rating_num') != None) or (item.find('a') != None)
+        if item.find('span', class_='title') != None or item.find('em',class_='') != None  or item.find('span', class_='rating_num') != None:
             title = item.find('span', class_='title').text
             num = item.find('em',class_='').text
+            rating = item.find('span', class_='rating_num').text
+            #url_movie = item.find('div',class_='hd').find('a',class_='')['href']
             #comments = item.find('span',class_='rating_num').text
             #url_movie = item.find('a')['href']
-            print(num + '. ' +title )
+            print(num + '. ' +title + ' ' + rating + ' ')
             print('-----------------------------------------------------------------')
+
 
 
